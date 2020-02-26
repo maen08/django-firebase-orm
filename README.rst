@@ -1,3 +1,4 @@
+=======================================
 FirebaseORM Python
 =======================================
 
@@ -182,27 +183,28 @@ CREDITS
 =======
 Thanks to `joewalk102 <https://github.com/joewalk102>`_ for forking the original
 project without whom this project would not be possible.
+|TralahM| |TralahM1|.
 
-.. |Build Status| image:: https://travis-ci.com/TralahM/firebase-orm.svg?branch=master
-   :target: https://travis-ci.com/TralahM/dotfiles
+.. |Build Status| image:: https://travis-ci.com/TralahM/django-firebase-orm.svg?branch=master
+   :target: https://travis-ci.com/TralahM/django-firebase-orm
 .. |License: MIT| image:: https://img.shields.io/badge/License-MIT-red.svg
    :target: https://opensource.org/licenses/MIT
 .. |Organization| image:: https://img.shields.io/badge/Org-TralahTek-blue.svg
    :target: https://github.com/TralahTek
 .. |made-with-python| image:: https://img.shields.io/badge/Made%20with-Python-1f425f.svg
    :target: https://www.python.org/
-.. |HitCount| image:: http://hits.dwyl.io/TralahM/firebase-orm.svg
-   :target: http://dwyl.io/TralahM/firebase-orm
-.. |Inline Docs| image:: http://inch-ci.org/github/TralahM/dotfiles.svg?branch=master
-   :target: http://inch-ci.org/github/TralahM/dotfiles
+.. |HitCount| image:: http://hits.dwyl.io/TralahM/django-firebase-orm.svg
+   :target: http://dwyl.io/TralahM/django-firebase-orm
+.. |Inline Docs| image:: http://inch-ci.org/github/TralahM/django-firebase-orm.svg?branch=master
+   :target: http://inch-ci.org/github/TralahM/django-firebase-orm
 .. |PyPI pyversions| image:: https://img.shields.io/pypi/pyversions/ansicolortags.svg
    :target: https://pypi.python.org/pypi/ansicolortags/
 .. |PRs Welcome| image:: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
    :target: https://github.com/TralahM/pull/
 .. |GitHub pull-requests| image:: https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg
-   :target: https://gitHub.com/TralahM/dotfiles/pull/
+   :target: https://gitHub.com/TralahM/django-firebase-orm/pull/
 .. |GitHub version| image:: https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg
-   :target: https://github.com/TralahM/dotfiles
+   :target: https://github.com/TralahM/django-firebase-orm
 .. |TralahM| image:: https://img.shields.io/badge/Engineer-TralahM-blue.svg?style=for-the-badge
    :target: https://github.com/TralahM
 .. |TralahM1| image:: https://img.shields.io/badge/Maintainer-TralahM-green.svg?style=for-the-badge
