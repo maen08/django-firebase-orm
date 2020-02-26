@@ -205,9 +205,9 @@ project without whom this project would not be possible.
    :target: https://github.com/TralahM/dotfiles
 .. |TralahM| image:: https://img.shields.io/badge/Engineer-TralahM-blue.svg?style=for-the-badge
    :target: https://github.com/TralahM
-.. |TralahM| image:: https://img.shields.io/badge/Maintainer-TralahM-green.svg?style=for-the-badge
+.. |TralahM1| image:: https://img.shields.io/badge/Maintainer-TralahM-green.svg?style=for-the-badge
    :target: https://github.com/TralahM
-.. |TralahM| image:: https://img.shields.io/badge/Engineer-TralahM-blue.svg?style=for-the-badge
+.. |TralahM2| image:: https://img.shields.io/badge/Engineer-TralahM-blue.svg?style=for-the-badge
    :target: https://github.com/TralahM
-.. |TralahM| image:: https://img.shields.io/badge/Maintainer-TralahM-green.svg?style=for-the-badge
+.. |TralahM3| image:: https://img.shields.io/badge/Maintainer-TralahM-green.svg?style=for-the-badge
    :target: https://github.com/TralahM
