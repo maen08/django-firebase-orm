@@ -1,6 +1,27 @@
 FirebaseORM Python
 =======================================
-Django like models for NoSQL database Firestore.
+
+|Build Status| |License: MIT| |Organization| |made-with-python|
+|HitCount| |Inline Docs| |PyPI pyversions| |PRs Welcome| |GitHub
+pull-requests| |GitHub version|.
+
+Django like models for NoSQL database Firestore Integrating with django's ORM.
+This is a fork and improvement of `firebase_orm
+<https://github.com/joewalk102/firebase-orm>`_ project which was initially
+forked from `xavx0z <https://github.com/xavx0z/`_ and stopped maintaining it.
+
+I made a few changes and improvements to suit my liking:
+
+1. Changed the need of creating a second settings.py file in the root of your
+   django project to now only require that you define the neccessary
+   configurations in your project's settings module.
+   *Note that django is now an explicit dependency*
+
+2. Created a new package for this app on pypi under **django-firebase-orm**
+
+It is my desire to continue the development of this project and thus welcome all
+developers wishing to contribute via improving documentation, bug fixes, test
+coverage, new features, etc.
 
 ________
 
@@ -9,24 +30,23 @@ Installation
 
 .. code-block:: shell
 
-    $ pip install firebase_orm
+    $ pip install django-firebase-orm
 
 Initialize
 ==========
-
-Create settings.py in the root directory of the project:
+In your project settings add the following configuration variables
 
     settings.py
 
     .. code-block:: python
 
-        CERTIFICATE = 'path/to/serviceAccountKey.json'
-        BUCKET_NAME = '<BUCKET_NAME>.appspot.com'
+        FIREBASE_ORM_CERTIFICATE = 'path/to/serviceAccountKey.json'
+        FIREBASE_ORM_BUCKET_NAME = '<BUCKET_NAME>.appspot.com'
 
-CERTIFICATE
+FIREBASE_ORM_CERTIFICATE
     Once you have created a `Firebase console <https://console.firebase.google.com/?authuser=0>`_ project and downloaded a JSON file with your service account credentials.
 
-BUCKET_NAME
+FIREBASE_ORM_BUCKET_NAME
     The bucket name must not contain gs:// or any other protocol prefixes. For example, if the bucket URL displayed in the `Firebase console <https://console.firebase.google.com/?authuser=0>`_ is gs://bucket-name.appspot.com, pass the string bucket-name.appspot.com
 
 Usage
@@ -50,13 +70,13 @@ Create model:
         def __str__(self):
             return self.headline
 
-Use API:
-""""""""
+Using The API:
+""""""""""""""""
 **Creating objects**
 
 To represent cloud firestore data in Python objects, FirebaseORM uses an intuitive system:
-A model class represents a collection,
-and an instance of that class represents a document in collection.
+A *model* *class* represents a *collection*,
+and an *instance* of that class represents a *document* in collection.
 
 To create an object, instantiate it using keyword arguments to the model class,
 then call save() to save it to the database.
@@ -74,7 +94,7 @@ then call save() to save it to the database.
 **Retrieving all objects**
 
 The simplest way to retrieve documents from a collections is to get all of them.
-To do this, use the all() method on a Manager:
+To do this, use the all() method on a Manager as you would in normal django:
 
 .. code-block:: pycon
 
@@ -102,7 +122,7 @@ this example changes its name and updates its record in the database:
 
 .. code-block:: pycon
 
-    >>> a.headline = 'FirebaseORM is cool'
+    >>> a.headline = 'Django-Firebase-ORM is awesome'
     >>> a.save()
 
 This performs an document.update() method behind the scenes.
@@ -112,7 +132,7 @@ FirebaseORM doesn’t hit the database until you explicitly call save().
 
     # Firebase ORM provides a rich database lookup API.
     >>> Article.objects.get(id=1)
-    <Article: FirebaseORM is cool>
+    <Article: Django-Firebase-ORM is awesome>
     >>> Article.objects.get(id=2)
     Traceback (most recent call last):
         ...
@@ -153,3 +173,43 @@ TextField
     Only the first 1,500 bytes of the UTF-8 representation are considered by queries.
 
     TextField has not extra required argument.
+
+Dependencies
+============
+1. *firebase-admin*
+2. *grpcio*
+3. *django*
+
+CREDITS
+=======
+Thanks to `joewalk102 <https://github.com/joewalk102>`_ for forking the original
+project without whom this project would not be possible.
+
+.. |Build Status| image:: https://travis-ci.com/TralahM/firebase-orm.svg?branch=master
+   :target: https://travis-ci.com/TralahM/dotfiles
+.. |License: MIT| image:: https://img.shields.io/badge/License-MIT-red.svg
+   :target: https://opensource.org/licenses/MIT
+.. |Organization| image:: https://img.shields.io/badge/Org-TralahTek-blue.svg
+   :target: https://github.com/TralahTek
+.. |made-with-python| image:: https://img.shields.io/badge/Made%20with-Python-1f425f.svg
+   :target: https://www.python.org/
+.. |HitCount| image:: http://hits.dwyl.io/TralahM/firebase-orm.svg
+   :target: http://dwyl.io/TralahM/firebase-orm
+.. |Inline Docs| image:: http://inch-ci.org/github/TralahM/dotfiles.svg?branch=master
+   :target: http://inch-ci.org/github/TralahM/dotfiles
+.. |PyPI pyversions| image:: https://img.shields.io/pypi/pyversions/ansicolortags.svg
+   :target: https://pypi.python.org/pypi/ansicolortags/
+.. |PRs Welcome| image:: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+   :target: https://github.com/TralahM/pull/
+.. |GitHub pull-requests| image:: https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg
+   :target: https://gitHub.com/TralahM/dotfiles/pull/
+.. |GitHub version| image:: https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg
+   :target: https://github.com/TralahM/dotfiles
+.. |TralahM| image:: https://img.shields.io/badge/Engineer-TralahM-blue.svg?style=for-the-badge
+   :target: https://github.com/TralahM
+.. |TralahM| image:: https://img.shields.io/badge/Maintainer-TralahM-green.svg?style=for-the-badge
+   :target: https://github.com/TralahM
+.. |TralahM| image:: https://img.shields.io/badge/Engineer-TralahM-blue.svg?style=for-the-badge
+   :target: https://github.com/TralahM
+.. |TralahM| image:: https://img.shields.io/badge/Maintainer-TralahM-green.svg?style=for-the-badge
+   :target: https://github.com/TralahM
