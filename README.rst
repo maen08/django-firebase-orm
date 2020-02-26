@@ -8,7 +8,7 @@ pull-requests| |GitHub version|.
 Django like models for NoSQL database Firestore Integrating with django's ORM.
 This is a fork and improvement of `firebase_orm
 <https://github.com/joewalk102/firebase-orm>`_ project which was initially
-forked from `xavx0z <https://github.com/xavx0z/`_ and stopped maintaining it.
+forked from `xavx0z <https://github.com/xavx0z>`_ and stopped maintaining it.
 
 I made a few changes and improvements to suit my liking:
 
@@ -23,7 +23,6 @@ It is my desire to continue the development of this project and thus welcome all
 developers wishing to contribute via improving documentation, bug fixes, test
 coverage, new features, etc.
 
-________
 
 Installation
 ============
@@ -108,7 +107,6 @@ The all() method returns a list instance Article of all the collection in the da
     # Now it has an ID.
     >>> a.id
     1
-
     # Fields are represented as attributes on the Python object.
     >>> a.headline
     'Django is cool'
