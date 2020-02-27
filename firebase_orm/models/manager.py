@@ -27,7 +27,7 @@ def g_error(method_to_decorate):
         except _Rendezvous:
             global retrying_the_request
             retrying_the_request += 1
-            while retrying_the_request  < RETRYING_THE_REQUEST:
+            while retrying_the_request < RETRYING_THE_REQUEST:
                 # TODO add to readme
                 print(f'Warning: network slow or not!'
                       f'\n Попытка подключения {retrying_the_request} из 4')
@@ -111,7 +111,8 @@ class Manager:
 
     def _save(self, pk, meta):
         doc_ref = self._get_ref_doc(pk)
-        doc_ref.update(meta, firestore.CreateIfMissingOption(True))
+        doc_ref.update(meta, firestore.firestore.WriteOption(
+            create_if_missing=True))
 
     def _get_ref_col(self):
         db_table = self._model.Meta.db_table
