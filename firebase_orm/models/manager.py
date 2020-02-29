@@ -39,6 +39,7 @@ def g_error(method_to_decorate):
 
 class Manager:
     db = None
+    rtdb = None
     bucket = None
 
     def __init__(self):

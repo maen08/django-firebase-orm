@@ -25,4 +25,5 @@ firebase_admin.initialize_app(
 
 if not Manager.db:
     Manager.db = firebase_admin.firestore.client()
+    Manager.rtdb = firebase_admin.db.reference()
     Manager.bucket = firebase_admin.storage.bucket()
