@@ -4,14 +4,15 @@ from firebase_orm.models.fields import Field, AutoField
 
 class ModelBase(type):
     """Metaclass for all models."""
+
     def __new__(cls, name, bases, attrs):
         super_new = super().__new__
         parents = [b for b in bases if isinstance(b, ModelBase)]
         if not parents:
             return super_new(cls, name, bases, attrs)
 
-        attrs['objects'] = Manager()
-        attrs['id'] = AutoField()
+        attrs["objects"] = Manager()
+        attrs["id"] = AutoField()
         return super_new(cls, name, bases, attrs)
 
     def __init__(self, name, bases, attrs):
@@ -20,14 +21,14 @@ class ModelBase(type):
             return
 
         # добавление класса модели в менеджер
-        manager = attrs['objects']
+        manager = attrs["objects"]
         manager._model = self
 
         # установка дескрипторам полей имени колонки в базе данных
         for key in attrs:
             data = attrs[key]
             if issubclass(type(data), Field) and not attrs.get(key).db_column:
-                setattr(data, 'db_column', key)
+                setattr(data, "db_column", key)
         type.__init__(self, name, bases, attrs)
 
 
@@ -48,7 +49,7 @@ class Model(metaclass=ModelBase):
         for key in attrs:
             val = attrs[key]
             if issubclass(type(val), Field):
-                model_fields[val.__dict__.get('db_column')] = key
+                model_fields[val.__dict__.get("db_column")] = key
 
         """инициализация происходит в двух случаях
         1. Создание `Model(name='any name')`
@@ -59,7 +60,7 @@ class Model(metaclass=ModelBase):
         """
         if self._Model__autoincrement:
             # id в self._meta
-            meta['id'] = self.objects._id_autoincrement()
+            meta["id"] = self.objects._id_autoincrement()
             # kwargs в self._meta
             for key, value in model_fields.items():
                 meta[key] = kwargs.get(value)
@@ -73,7 +74,7 @@ class Model(metaclass=ModelBase):
         self.objects._save(self.id, self._meta)
 
     def __str__(self):
-        return '%s object (%s)' % (self.__class__.__name__, self.id)
+        return "%s object (%s)" % (self.__class__.__name__, self.id)
 
     def __repr__(self):
-        return '<%s: %s>' % (self.__class__.__name__, self)
+        return "<%s: %s>" % (self.__class__.__name__, self)
