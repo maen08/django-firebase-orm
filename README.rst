@@ -2,6 +2,10 @@
 FirebaseORM Python
 =======================================
 
+.. image:: https://api.codacy.com/project/badge/Grade/8faf71360a614283bdaa356d532e1249
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/manual/musyoki.tralah/django-firebase-orm?utm_source=github.com&utm_medium=referral&utm_content=TralahM/django-firebase-orm&utm_campaign=Badge_Grade_Dashboard
+
 |Build Status| |License: MIT| |Organization| |made-with-python|
 |HitCount| |Inline Docs| |PyPI pyversions| |PRs Welcome| |GitHub
 pull-requests| |GitHub version|.
