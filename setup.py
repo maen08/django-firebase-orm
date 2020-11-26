@@ -13,7 +13,7 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     install_requires=[
-        "firebase-admin>=2.9.0",
+        "firebase-admin==2.13.0",
         "grpcio>=1.9.1",
         "django",
     ],
