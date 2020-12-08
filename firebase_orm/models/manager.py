@@ -117,7 +117,7 @@ class Manager:
 
     def _save(self, pk, meta):
         doc_ref = self._get_ref_doc(pk)
-        doc_ref.update(meta, firestore.firestore.WriteOption(create_if_missing=True))
+        doc_ref.update(meta, firestore.firestore.WriteOption())
 
     def _get_ref_col(self):
         db_table = self._model.Meta.db_table
