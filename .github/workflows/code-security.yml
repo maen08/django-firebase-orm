@@ -1,0 +1,23 @@
+name: Code Security Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  sca-scanning:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v41.0.6
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
