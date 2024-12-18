@@ -1,0 +1,28 @@
+name: Run Bearer Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  run-bearer-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Pull Docker Image
+      - name: Pull Bearer Docker Image
+        run: |
+          docker pull bearer/bearer:latest
+
+      # Step 3: Run Bearer Scan
+      - name: Run Bearer Scan
+        run: |
+          docker run --rm \
+          -v "${{ github.workspace }}:/app" \
+          bearer/bearer:latest scan /app
